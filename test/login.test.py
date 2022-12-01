@@ -2,8 +2,8 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
-from selenium.common.exceptions import TimeoutException
-from selenium.webdriver.support.ui import WebDriverWait
+from datetime import datetime
+from datetime import date
 from selenium.webdriver.support import expected_conditions as EC
 
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
@@ -28,6 +28,12 @@ PortIn_Number = driver.find_element(
 PortIn_Number.send_keys("")
 Requested_date = driver.find_element(
     By.XPATH, "//input[@id='dp1669855704625']")
+
+# dd/mm/YY
+today = date.today()
+d1 = today.strftime("%m/%d/%Y")
+Requested_date.send_keys(d1)
+
 ASAP_checkbox = driver.find_element(
     By.XPATH, "//tbody/tr[@id='rowId_0']/td[6]/input[1]")
 ASAP_checkbox.click()
