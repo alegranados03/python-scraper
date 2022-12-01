@@ -24,7 +24,7 @@ Manual_entry = driver.find_element(
     By.XPATH, "//a[contains(text(),'Manual Entry')]")
 Manual_entry.click()
 PortIn_Number = driver.find_element(
-    By.XPATH, "//a[contains(text(),'Manual Entry')]")
+    By.XPATH, "//tbody/tr[@id='rowId_0']/td[1]/input[1]")
 PortIn_Number.send_keys("")
 Requested_date = driver.find_element(
     By.XPATH, "//input[@id='dp1669855704625']")
